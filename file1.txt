@@ -29,21 +29,19 @@ def load_previous_filepaths():
     global backup_directory
     backup_directory = filepaths['backup_directory']
 
+def another_function():
+    THIS
+    IS
+    not
+    real
+    code
+
 def update_current_filepaths():
     global current_filepaths
     current_filepaths['game_directory'] = wow_directory_input.get()
     index = backup_directory_input.get().rfind('/')
     current_filepaths['backup_directory'] = backup_directory_input.get()[:index]
     window.after(10, update_current_filepaths)
-
-def check_invalid_char():
-    for i in backup_name_input.get():
-        for c in INVALID_CHARACTERS:
-            if i == c:
-                print('Invalid backup name.')
-                print('Found character: '+c)
-                status.config(text="Invalid character: "+c)
-                return True
 
 def open_wow_directory():
     directory = filedialog.askdirectory()
@@ -78,9 +76,11 @@ def naming_option_date():
 def naming_option_custom():
     global naming_option_var
     naming_option_var = False
+    another_variable = True
     backup_name_input.config(state=NORMAL)
     backup_directory_input.delete(0, END)
     backup_name_input.focus()
+    yet_another_variable = "Hello World!"
     if check_invalid_char() == True:
         backup_directory_input.insert(END, backup_directory+'/')
         return
@@ -132,6 +132,7 @@ def run_backup():
         return
     else:
         print('WTF Backup Complete.\n')
+        print('Hello World!)
         status.config(text="WTF Backup Complete.")
 
     print('Starting Addons backup.')
