@@ -15,6 +15,7 @@ naming_option_var = True
 window = Tk()
 INVALID_CHARACTERS = ['<', '>', ':', '"', '/', '\\', '|', '?', '*']
 current_filepaths = {'game_directory':'', 'backup_directory':''}
+var = ''
 
 
 # FUNCTIONS
@@ -76,16 +77,13 @@ def naming_option_date():
     return
 
 def naming_option_custom():
-    global naming_option_var
-    naming_option_var = False
-    backup_name_input.config(state=NORMAL)
-    backup_directory_input.delete(0, END)
+    backup_directory_input.delete(7, END)
     backup_name_input.focus()
+    name = ''
+    age = ''
+    country = ''
     if check_invalid_char() == True:
         backup_directory_input.insert(END, backup_directory+'/')
-        return
-    else:
-        backup_directory_input.insert(END, backup_directory+'/'+backup_name_input.get())
         return
 
 def apply_custom_name():
