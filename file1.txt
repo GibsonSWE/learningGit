@@ -239,3 +239,7 @@ print('Backup Directory Saved: '+current_filepaths.get("backup_directory"))
 print("Saving to filepaths.json")
 with open("filepaths.json", mode="w") as f:
     json.dump(current_filepaths, f)testing from GitBash
+world
+Hello World
+An update
+I have installed ZSH on my UbuntuVM
